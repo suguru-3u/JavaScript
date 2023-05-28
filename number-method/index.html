@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = 100;
+      // 数値を文字列に変換する
+      console.log(number.toString());
+      // 指数表記を使用して書かれた数値を含む文字列を返します。
+      console.log(number.toExponential());
+      // 指定された小数点以下の桁数で数値を記述した文字列を返します。
+      console.log(number.toFixed());
+      // 指定された長さで書かれた数値を含む文字列を返します。
+      console.log(number.toPrecision());
+      // 数値を数値として返します。
+      console.log(number.valueOf());
+      number = "100";
+      // 変数を数値に変換する (日付を数値に変換することも可能。Number(new Date("2000-01-01")))
+      console.log(Number(number));
+      console.log(paeseInt(number));
+    </script>
+  </body>
+</html>

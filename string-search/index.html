@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // javaScriptの文字列検索
+      let text = "Please locate where 'locate' occurs!";
+      // 見つかると見つかった文字列番号を取得、見つからなかった場合、-1を取得する
+      console.log(text.indexOf("locate"));
+      // 最後に見つかった文字列番号を取得する。
+      console.log(text.lastIndexOf("locate"));
+      // indexof同様引数の文字を検索するが、searchは引数に正規表現を使用することができる。
+      console.log(text.search("locate"));
+      // search同様に文字列を検索することができる,違いはよくわからん
+      console.log(text.match("locate"));
+      // 引数の文字が含まれているか、真偽値を取得することができる。
+      console.log(text.includes("locate"));
+      // 文字列が引数の値から始まるのか真偽値を取得する。
+      console.log(text.startsWith("Please"));
+      // 文字列が引数の値で終わるのか真偽値を取得する。
+      console.log(text.endWith("occurs!"));
+    </script>
+  </body>
+</html>
