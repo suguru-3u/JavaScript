@@ -1,0 +1,11 @@
+body {
+  margin: 30px;
+}
+
+#todo-title {
+  text-align: left;
+}
+
+#todo-filed-edit {
+  display: none;
+}
