@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const
+      // ES6 (2015)constで導入されました 。
+
+      // 再宣言できません。
+      const a = 1;
+      // const b constは宣言時に値を割り当てないといけない
+      // const a = 2 再宣言できないのでエラー
+
+      // 再代入できません。
+      // a = 1; エラー
+      // ただ、配列の要素は変更することができる
+      const numbers = [1, 2, 3, 4, 5, 6];
+      numbers[0] = 10;
+      // 配列の再割当てはできない。numbers = [1, 2, 3, 4, 54];
+      // オブジェクトのプロパティを変更することができる
+      const array = { a: 1, b: 2 };
+      array.a = 3;
+
+      // ブロックスコープがあります。
+      {
+        const g = 100;
+      }
+      // Internet Explorer では完全にはサポートされていません。
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 文字列比較
+      const a = "A";
+      const b = "B";
+      // JSは文字列に対しても比較を行うことができる。（文字列はアルファベット順）
+      console.log(a < b);
+
+      // 文字列と数値の追加
+      const z = a + 2;
+      // 数値と数値を足すと合計が返却されますが、数値と文字列では、文字列が返却される。
+
+      // undefind
+      let c; // 変数を宣言しても値がない変数はundefindと評価される。undefindを変数に代入することも可能。
+      console.log(typeof c); // undefind
+      let d = ""; //空白文字列は、文字列と認識される。
+      console.log(typeof d); // string
+    </script>
+  </body>
+</html>

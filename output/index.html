@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>My First Web Page</h1>
+    <p>My First Paragraph</p>
+
+    <p id="demo"></p>
+    <script>
+      // HTML 要素にアクセスするには、JavaScript でdocument.getElementById(id)メソッドを使用できます。
+      // 属性idは HTML 要素を定義します。プロパティinnerHTML は HTML コンテンツを定義します。
+      document.getElementById("demo").innerHTML = 2 + 5;
+
+      // document.write() を使用する方法も存在するが、使用すると既存のHTMLが消えてしまう。テスト目的で使用するといい
+
+      // Windouw.alert アラートボックスを表示させる(一番最初に表示される)　Windowは省略可能
+      window.alert("Hello");
+
+      // console.log：ブラウザのコンソールに表示させる
+      console.log("print console");
+
+      // window.print(): avaScript には印刷オブジェクトや印刷メソッドがありません.
+      // 唯一の例外は、window.print()ブラウザでメソッドを呼び出して、現在のウィンドウのコンテンツを印刷できることです。
+      window.print();
+    </script>
+  </body>
+</html>
