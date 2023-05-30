@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      console.log("配列の長さ", fruits.length);
+      console.log("配列をカンマ区切りの文字列に変換", fruits.toString());
+      console.log(
+        "配列をカンマ区切りの文字列に変換（区切り文字を指定数rことができる）",
+        fruits.join("*")
+      );
+      console.log("配列の最後の要素を削除することができる", fruits.pop());
+      console.log(
+        "配列の最後の要素を追加することができる",
+        fruits.push("remon")
+      );
+      console.log(
+        "配列の最初の要素を削除する（インデックスを1つづつ下げるため、動作が遅くなる？）",
+        fruits.shift()
+      );
+      console.log(
+        "配列の最初の要素に追加する（インデックスを1つづつ上げるため、動作が遅くなる？）",
+        fruits.unshift("hello")
+      );
+
+      const myGirls = ["Cecilie", "Lone"];
+      const myBoys = ["Emil", "Tobias", "Linus"];
+      console.log(
+        "配列の結合（新しい配列を作成する、引数には2,3も指定することができる）",
+        myGirls.concat(myBoys)
+      );
+
+      // (追加するインデックス、削除する数、追加する値)
+      // 配列に要素を追加、削除、切り取りも行うことができ、動作結果は新しい配列を作成する
+      console.log("配列の任意な要素に追加", fruits.splice(1, 0, "こんにちわ"));
+      console.log("配列の任意な要素を削除", fruits.splice(0, 1));
+    </script>
+  </body>
+</html>
