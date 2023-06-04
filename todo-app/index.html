@@ -40,8 +40,7 @@
       };
 
       const addTodo = () => {
-        const todoValue = document.getElementById("todo-value").value;
-        todos.push(todoValue);
+        todos = [...todos, document.getElementById("todo-value").value];
         document.getElementById("todo-value").value = "";
         clearTodoList();
         readTodo();

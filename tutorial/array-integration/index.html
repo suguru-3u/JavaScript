@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // このforEach()メソッドは、配列要素ごとに関数 (コールバック関数) を 1 回呼び出します。
+      let numbers = [45, 4, 9, 16, 25];
+      let txt = "";
+      numbers.forEach(myFunction);
+      console.log(txt); // 99
+
+      function myFunction(value, index, array) {
+        txt += value + "<br>";
+      }
+
+      // このmap()メソッドは、各配列要素に対して関数を実行することにより、新しい配列を作成します。
+      // このmap()メソッドは、値のない配列要素に対して関数を実行しません。
+      // このmap()メソッドは元の配列を変更しません。
+      const numbers1 = [45, 4, 9, 16, 25];
+      const numbers2 = numbers1.map(myFunction);
+      console.log(numbers1); // [45, 4, 9, 16, 25]
+      console.log(numbers2); // [90, 8, 18, 32, 50]
+
+      function myFunction(value, index, array) {
+        return value * 2;
+      }
+
+      // ilter()メソッドは、テストに合格した配列要素を含む新しい配列を作成します。
+      numbers = [45, 4, 9, 16, 25];
+      const over18 = numbers.filter(myFunction);
+      console.log(numbers); // [4,9,16]
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+
+      // reduce()メソッドは、各配列要素に対して関数を実行して、単一の値を生成 (値を縮小) します。
+      // 元の配列を縮小しません。
+      numbers = [45, 4, 9, 16, 25];
+      let sum = numbers.reduce(myFunction);
+      console.log(sum); // 99
+
+      function myFunction(total, value, index, array) {
+        return total + value;
+      }
+
+      // every()メソッドは、すべての配列値がテストに合格するかどうかをチェックします。
+      numbers = [45, 4, 9, 16, 25];
+      let allOver18 = numbers.every(myFunction);
+      console.log(allOver18); // false
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+
+      // some()メソッドは、一部の配列値がテストに合格するかどうかをチェックします。
+      numbers = [45, 4, 9, 16, 25];
+      let someOver18 = numbers.some(myFunction);
+      console.log(someOver18); // true
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+
+      // indexOf()メソッドは、配列内で要素値を検索し、その位置を返します。(見つからなければ-1)
+      let fruits = ["Apple", "Orange", "Apple", "Mango"];
+      let position = fruits.indexOf("Apple");
+      console.log(position); // 0
+
+      // lastIndexOf()は と同じですArray.indexOf()が、指定された要素が最後に出現した位置を返します。
+      // 見つからなければ-1
+      fruits = ["Apple", "Orange", "Apple", "Mango"];
+      position = fruits.lastIndexOf("Apple") + 1;
+      console.log(position); // 2
+
+      // find()メソッドは、テスト関数を通過した最初の配列要素の値を返します。
+      numbers = [4, 9, 16, 25, 29];
+      let first = numbers.find(myFunction);
+      console.log(first); // 4
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+
+      // findIndex()メソッドは、テスト関数を通過した最初の配列要素のインデックスを返します。
+      numbers = [4, 9, 16, 25, 29];
+      first = numbers.findIndex(myFunction);
+      console.log(first); // 0
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+
+      // Array.from()メソッドは、長さプロパティを持つ任意のオブジェクトまたは任意の反復可能なオブジェクトから Array オブジェクトを返します。
+      Array.from("ABCDEFG"); // 文字列から配列を作成します。
+
+      // Array.keys()メソッドは、配列のキーを含む Array Iterator オブジェクトを返します。
+      fruits = ["Banana", "Orange", "Apple", "Mango"];
+      const keys = fruits.keys();
+      console.log(keys); // 0,1,2,3 この場合配列のインデックスがキーとなる
+
+      for (let x of keys) {
+        text += x + "<br>";
+      }
+
+      // entries 配列イテレータを作成し、キーと値のペアを反復処理します。
+      // このメソッドは、配列内の各要素から「キーと値のペア」を新しいArray iteratorオブジェクトとして返します。
+      // つまり返される値は、キー値と列値が対になったデーター型(イテレーター)として形成されたものです。
+      fruits = ["Banana", "Orange", "Apple", "Mango"];
+      const f = fruits.entries();
+      console.log(f); // 配列とインデックスが表示される
+
+      for (let x of f) {
+        document.getElementById("demo").innerHTML += x;
+      }
+
+      // 使い方例
+      //    let arr = ["Aaa", "Bbb", "Ccc"];
+      //    for(let [index, value] of arr.entries()){
+      //    document.write(
+      //          "index: ", index, " / ",
+      //          "value: ", value, "<br>"
+      //       );
+      //    }
+
+      // Array.includes()では配列が導入されました。これにより、要素が配列内に存在するかどうかを確認できます
+      fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      fruits.includes("Mango"); // is true
+
+      //  配列スプレッド (...) ... 演算子は、反復可能 (配列など) をさらに多くの要素に拡張します。
+      // 参考サイト
+      // https://fuuno.net/nani/nani03/nani03.html
+      // https://qiita.com/akisx/items/682a4283c13fe336c547#%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E6%A7%8B%E6%96%87spread-syntax
+      const q1 = ["Jan", "Feb", "Mar"];
+      const q2 = ["Apr", "May", "Jun"];
+      const q3 = ["Jul", "Aug", "Sep"];
+      const q4 = ["Oct", "Nov", "May"];
+
+      const year = [...q1, ...q2, ...q3, ...q4];
+    </script>
+  </body>
+</html>

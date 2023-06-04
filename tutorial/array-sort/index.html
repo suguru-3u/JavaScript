@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // sort()メソッドは配列をアルファベット順に並べ替えます。
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      console.log("アルファベット順に並べ替え", fruits.sort());
+      console.log("配列内の要素を逆順に並べ替え", fruits.reverse());
+
+      // sortで数値を並べ替えると一度文字列に変換するため、正しく動作しない可能性がある。
+      // 数値が文字列としてソートされる場合、「2」は「1」より大きいため、「25」は「100」より大きくなります。
+      // このため、このsort()メソッドでは数値を並べ替える際に誤った結果が生成されます。
+      // これは、比較関数を提供することで修正できます。
+      // 関数が 2 つの値を比較する場合sort()、その値を比較関数に送信し、返された値 (負、ゼロ、正) に従って値を並べ替えます。
+      // 結果が負の場合、aは の前にソートされます b。
+      // 結果が正の場合、bは の前にソートされますa。
+      // 結果が 0 の場合、2 つの値の並べ替え順序は変更されません。
+      const points = [40, 100, 1, 5, 25, 10];
+      console.log(
+        "比較関数を使用（昇順）",
+        points.sort((a, b) => {
+          return a - b;
+        })
+      );
+      console.log(
+        "比較関数を使用（降順）",
+        points.sort((a, b) => {
+          return b - a;
+        })
+      );
+
+      // フィッシャー・イェーツ・メソッド
+      // 配列をランダムな順序で並べ替える正しいやり方
+      for (let i = points.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let k = points[i];
+        points[i] = points[j];
+        points[j] = k;
+      }
+
+      //　配列内で最大値と最小値を見つける方法は、メソッドが用意されていないので
+      // 独自の比較関数を作成するしかない
+      // 最大値の検索
+      function myArrayMax(arr) {
+        let len = arr.length;
+        let max = -Infinity;
+        while (len--) {
+          if (arr[len] > max) {
+            max = arr[len];
+          }
+        }
+        return max;
+      }
+    </script>
+  </body>
+</html>
