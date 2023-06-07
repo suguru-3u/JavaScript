@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // https://www.w3schools.com/js/js_math.asp
+      // Mathオブジェクトには、コンストラクタがなくすべて静的メソッド
+      console.log("最も近い整数を返します。", Math.round(4.6)); // 5
+      console.log("最も近い整数を返します。", Math.round(4.3)); // 4
+      console.log("値に最も近い整数に切り上げて返します。", Math.ceil(4.3)); // 5
+      console.log(
+        "最も近い整数に切り捨てられた値を返します。",
+        Math.floor(4.3)
+      ); // 4
+      console.log("整数部分を返します。", Math.trunc(3.3)); // 3
+      console.log("整数部分を返します。", Math.trunc(6.6)); // 6
+      console.log("値が負、null、または正の場合に戻ります。", Math.sign(0)); // 0
+      console.log("値が負、null、または正の場合に戻ります。", Math.sign(-1)); // -1
+      console.log("値が負、null、または正の場合に戻ります。", Math.sign(1)); // 1
+      console.log("乗の値を返します。", Math.pow(3, 3)); // 27
+      console.log("平方根を返します。", Math.sqrt(64)); // 8
+      console.log("絶対 (正) 値を返します。", Math.abs(-4.6)); // 4.6
+      console.log(
+        "引数のリスト内の最小値または最大値を見つけるために使用できます。",
+        Math.min(0, 150, 30, 20, -8, -200),
+        Math.max(0, 150, 30, 20, -8, -200)
+      ); // -200,150
+      console.log(
+        "0 (両端を含む) から 1 (両端を含まない) までの乱数を返します。",
+        Math.random()
+      ); // 0 ~ 1
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // https://www.w3schools.com/js/js_date_methods.asp
+      let d = new Date("2021-03-25");
+      console.log("年を取得", d.getFullYear());
+      console.log(
+        "日付の月を数値 (0 ～ 11) として取得（1 月は月番号 0）",
+        d.getMonth()
+      );
+      /**
+       * 月の名前を取得する実装例
+       * const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+       * const d = new Date("2021-03-25");
+       * let month = months[d.getMonth()];
+       * */
+      console.log("日付の日を数値 (1 ～ 31) として取得", d.getDate());
+      console.log("日付の時間を数値 (0 ～ 23) で取得", d.getHours());
+      console.log("日付の分を数値 (0 ～ 59) として取得", d.getMinutes());
+      console.log("日付の秒を数値 (0 ～ 59) として取得", d.getSeconds());
+      console.log(
+        "日付のミリ秒を数値 (0 ～ 999) として取得",
+        d.getMilliseconds()
+      );
+      // JavaScript では、週の最初の日 (0 日目) は日曜日です。
+      console.log("日付の曜日を数値 (0 ～ 6) で取得", d.getDay());
+      console.log("1970 年 1 月 1 日からのミリ秒数を取得", d.getTime());
+      console.log("1970 年 1 月 1 日からのミリ秒数を返します。", Date.now());
+      console.log(
+        "現地時間と UTC 時間の差 (分単位) を返します。",
+        d.getTimezoneOffset()
+      );
+    </script>
+  </body>
+</html>
