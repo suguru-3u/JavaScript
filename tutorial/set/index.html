@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // https://www.w3schools.com/js/js_sets.asp
+      // https://pankobo.me/blog/post/202202-js-deduplicate-array-set
+      // setの作成
+      // setオブジェクトのコンストラクタに配列を渡せば、配列内の重複するデータが削除されたうえでオブジェクトが作成可能
+      // setは1:重複する値を保持できない,2:添字の概念が存在しない
+      const set = new Set(["a", "b", "c", "b", "c", "a"]);
+      console.log("setの中身", set);
+
+      // オブジェクト配列の例
+      // それは厳密等価演算子（===）で比較できるプリミティブしか正しく重複削除できない。
+      const objectSet = new Set([
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+        { id: 1 },
+        { id: 2 },
+      ]);
+      console.log("オブジェクト配列の表示", objectSet);
+
+      /**
+       * 業務での使用例
+       * 重複ありのリスト
+       * let pref_array = [ "東京都", "神奈川県", "埼玉県", "神奈川県", "千葉県", "東京都"];
+       *
+       * // setオブジェクトを介して重複分を削除
+       * let pref_list = new Set(pref_array);
+       * // 再度配列化
+       * let unique_pref_array = Array.from(pref_list);
+       * console.log(unique_pref_array); // 結果：{"東京都", "神奈川県", "埼玉県", "千葉県"}
+       */
+
+      // setに追加
+      // 等しい要素を追加すると、最初の要素のみが保存されます。
+      set.add("d");
+      set.add("d");
+      set.add("d");
+      console.log("追加後のsetの中身", set);
+
+      // set内の削除
+      const setBoolean = set.delete("d"); // 真偽値が返却される
+
+      // set内の値確認
+      const checkSetValue = set.has("a"); // 真偽値が返却される
+
+      // setの活用方法(ループ処理)
+      let text = "";
+      set.forEach((value) => {
+        text += value;
+      });
+      console.log("setの活用方法", text);
+
+      // valuesメソッド
+      console.log(
+        "set要素から新しいイテレータオブジェクトの作成",
+        set.values()
+      );
+    </script>
+  </body>
+</html>
