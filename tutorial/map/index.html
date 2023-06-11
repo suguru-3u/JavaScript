@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // https://www.w3schools.com/js/js_maps.asp
+      // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map
+      // https://qiita.com/allJokin/items/28cd023335641e8796c5
+
+      // Mapの作成方法
+      // Mapオブジェクトのキーも、重複した値を保持できません。(値は重複可能)
+      // 同じキーの値を設定した場合、あとから指定した値で上書きされてしまう。
+      const newMap = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200],
+      ]);
+      console.log("Mapの中身の確認", newMap);
+
+      const objectArray = [
+        { id: 1, name: "Alice" },
+        { id: 2, name: "Bob" },
+        { id: 1, name: "Alice" },
+        { id: 1, name: "Alice" },
+      ];
+      const noOverlappingMap = new Map(
+        objectArray.map((user) => [user.id, user])
+      );
+      console.log("重複排除して値の確認", noOverlappingMap);
+      console.log(
+        "重複排除して配列の確認",
+        Array.from(noOverlappingMap.values())
+      );
+      console.log("重複排除して配列の確認", [...noOverlappingMap.values()]);
+
+      // Mapの中に追加
+      newMap.set("banana", 300);
+      console.log("Mapに追加した後の中身の確認", newMap);
+
+      // Mapの値の取得(キー名を指定する)
+      console.log("Mapの値の取得", newMap.get("apples")); // return 500
+
+      // Mapの要素数
+      console.log("Map内の要素数", newMap.size);
+
+      // Map内要素の削除(キー名を指定)
+      newMap.delete("apples");
+      console.log("Map内の要素数", newMap.size);
+
+      // キーの存在確認
+      console.log(newMap.has("bananas")); // true
+      console.log(newMap.has("apples")); // false
+
+      // ループ処理(キーとバリューを取得できる)
+      newMap.forEach((value, key) =>
+        console.log("キー", key, "バリュー", value)
+      );
+
+      // キーの一覧表示
+      console.log(newMap.keys());
+
+      // 値の一覧表示
+      console.log(newMap.values());
+
+      // entries
+      // Map オブジェクト内の要素に対して挿入順にすべての要素の [key, value] の配列を含む、新しいイテレーターオブジェクトを返す。
+      console.log(
+        "Mapオブジェクトのキーと値の組み合わせを配列として返す",
+        newMap.entries()
+      );
+    </script>
+  </body>
+</html>
